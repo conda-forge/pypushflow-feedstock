@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
 
 requirements:
   host:
@@ -33,18 +33,19 @@ test:
     - pytest-subtests >=0.4
 
 outputs:
-  - name: {{ name|lower }}
+  - name: pypushflow
     requirements:
       host: &id001
         - python >=3.6
         - pip
       run:
         - python >=3.6
-  - name: {{ name|lower }}-mx
+  - name: pypushflow-mx
     requirements:
       host: *id001
       run:
-        - {{ name|lower }} =={{ version }}
+        - python >=3.6
+        - pypushflow =={{ version }}
         - pymongo >=4
 
 about:
