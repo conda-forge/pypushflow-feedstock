@@ -2,7 +2,7 @@
 {% set version = "0.3.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name|lower }}-meta
   version: {{ version }}
 
 source:
@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -33,18 +33,18 @@ test:
     - pytest-subtests >=0.4
 
 outputs:
-  - name: pypushflow
+  - name: {{ name|lower }}
     requirements:
       host: &id001
         - python >=3.6
         - pip
       run:
         - python >=3.6
-  - name: pypushflow-mx
+  - name: {{ name|lower }}-mx
     requirements:
       host: *id001
       run:
-        - pypushflow =={{ version }}
+        - {{ name|lower }} =={{ version }}
         - pymongo >=4
 
 about:
