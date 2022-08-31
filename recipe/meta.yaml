@@ -12,14 +12,12 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 3
+  number: 4
 
 requirements:
   host:
     - python >=3.6
     - pip
-  run:
-    - python >=3.6
 
 test:
   imports:
@@ -42,6 +40,8 @@ outputs:
         - pip
       run:
         - python >=3.6
+    build:
+      noarch: python
   - name: pypushflow-mx
     requirements:
       host: *id001
@@ -49,6 +49,8 @@ outputs:
         - python >=3.6
         - pypushflow =={{ version }}
         - pymongo >=4
+    build:
+      noarch: python
 
 about:
   home: https://gitlab.esrf.fr/workflow/pypushflow
