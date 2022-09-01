@@ -28,6 +28,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pypushflow-green.svg)](https://anaconda.org/conda-forge/pypushflow) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pypushflow.svg)](https://anaconda.org/conda-forge/pypushflow) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pypushflow.svg)](https://anaconda.org/conda-forge/pypushflow) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pypushflow.svg)](https://anaconda.org/conda-forge/pypushflow) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pypushflow--mx-green.svg)](https://anaconda.org/conda-forge/pypushflow-mx) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pypushflow-mx.svg)](https://anaconda.org/conda-forge/pypushflow-mx) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pypushflow-mx.svg)](https://anaconda.org/conda-forge/pypushflow-mx) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pypushflow-mx.svg)](https://anaconda.org/conda-forge/pypushflow-mx) |
 
 Installing pypushflow
 =====================
@@ -39,16 +40,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pypushflow` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `pypushflow, pypushflow-mx` can be installed with `conda`:
 
 ```
-conda install pypushflow
+conda install pypushflow pypushflow-mx
 ```
 
 or with `mamba`:
 
 ```
-mamba install pypushflow
+mamba install pypushflow pypushflow-mx
 ```
 
 It is possible to list all of the versions of `pypushflow` available on your platform with `conda`:
