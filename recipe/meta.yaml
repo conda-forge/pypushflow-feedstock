@@ -2,7 +2,7 @@
 {% set version = "0.3.0" %}
 
 package:
-  name: {{ name|lower }}-meta
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
@@ -18,6 +18,8 @@ requirements:
   host:
     - python >=3.6
     - pip
+  run:
+    - python >=3.6
 
 test:
   imports:
@@ -27,28 +29,34 @@ test:
     - pytest --pyargs pypushflow
   requires:
     - pip
-    - psutil >=5.8
-    - mongita >=1
     - pytest >=7
     - pytest-subtests >=0.4
+    - psutil >=5.8
+    - mongita >=1
 
 outputs:
   - name: pypushflow
+  - name: pypushflow-mx
     requirements:
-      host: &id001
+      host:
         - python >=3.6
         - pip
       run:
         - python >=3.6
-    build:
-      noarch: python
-  - name: pypushflow-mx
-    requirements:
-      host: *id001
-      run:
-        - python >=3.6
-        - pypushflow =={{ version }}
-        - pymongo >=4
+        - "{{ pin_subpackage('pypushflow', exact=True) }}"
+        - pymongo >=3
+    test:
+      imports:
+        - pypushflow
+      commands:
+        - pip check
+        - pytest --pyargs pypushflow
+      requires:
+        - pip
+        - pytest >=7
+        - pytest-subtests >=0.4
+        - psutil >=5.8
+        - mongita >=1
     build:
       noarch: python
 
