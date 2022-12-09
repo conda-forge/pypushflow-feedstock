@@ -1,5 +1,5 @@
 {% set name = "pypushflow" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pypushflow-{{ version }}.tar.gz
-  sha256: bb292cf7a4fcd7096599b21686db81857ff779b9473f4b58d064b52dafe365ff
+  sha256: 16021c974e53d4f8b1c120e6e8fba2b78ed0b15ce0bfe96615ae69d92db60a5a
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 5
+  number: 0
 
 requirements:
   host:
@@ -26,7 +26,7 @@ test:
     - pypushflow
   commands:
     - pip check
-    - pytest --pyargs pypushflow
+    - pytest --pyargs pypushflow --ignore "$(python -c "from pypushflow import tests;print(tests.__path__[0])")/concurrent/test_interrupt.py"
   requires:
     - pip
     - pytest >=7
@@ -50,7 +50,7 @@ outputs:
         - pypushflow
       commands:
         - pip check
-        - pytest --pyargs pypushflow
+        - pytest --pyargs pypushflow --ignore "$(python -c "from pypushflow import tests;print(tests.__path__[0])")/concurrent/test_interrupt.py"
       requires:
         - pip
         - pytest >=7
@@ -61,8 +61,9 @@ outputs:
       noarch: python
 
 about:
-  home: https://gitlab.esrf.fr/workflow/pypushflow
+  home: https://gitlab.esrf.fr/workflow/pypushflow/
   summary: A task scheduler for cyclic and acyclic graphs
+  dev_url: https://gitlab.esrf.fr/workflow/pypushflow/
   license: MIT
   license_file: LICENSE.md
 
