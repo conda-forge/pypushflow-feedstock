@@ -26,7 +26,7 @@ test:
     - pypushflow
   commands:
     - pip check
-    - pytest --pyargs pypushflow
+    - pytest --pyargs pypushflow --ignore "$(python -c "from pypushflow import tests;print(tests.__path__[0])")/concurrent/test_interrupt.py"
   requires:
     - pip
     - pytest >=7
@@ -50,7 +50,7 @@ outputs:
         - pypushflow
       commands:
         - pip check
-        - pytest --pyargs pypushflow
+        - pytest --pyargs pypushflow --ignore "$(python -c "from pypushflow import tests;print(tests.__path__[0])")/concurrent/test_interrupt.py"
       requires:
         - pip
         - pytest >=7
