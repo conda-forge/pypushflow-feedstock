@@ -43,7 +43,7 @@ outputs:
         - pip
       run:
         - python >=3.6
-        - {{ pin_subpackage('pypushflow', exact=True) }}
+        - "{{ pin_subpackage('pypushflow', exact=True) }}"
         - pymongo >=3
     test:
       imports:
@@ -61,8 +61,9 @@ outputs:
       noarch: python
 
 about:
-  home: https://gitlab.esrf.fr/workflow/pypushflow
+  home: https://gitlab.esrf.fr/workflow/pypushflow/
   summary: A task scheduler for cyclic and acyclic graphs
+  dev_url: https://gitlab.esrf.fr/workflow/pypushflow/
   license: MIT
   license_file: LICENSE.md
 
