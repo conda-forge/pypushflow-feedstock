@@ -1,13 +1,15 @@
 About pypushflow
 ================
 
-Home: https://gitlab.esrf.fr/workflow/pypushflow
+Home: https://gitlab.esrf.fr/workflow/pypushflow/
 
 Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pypushflow-feedstock/blob/main/LICENSE.txt)
 
 Summary: A task scheduler for cyclic and acyclic graphs
+
+Development: https://gitlab.esrf.fr/workflow/pypushflow/
 
 Current build status
 ====================
