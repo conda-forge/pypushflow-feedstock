@@ -1,5 +1,5 @@
 {% set name = "pypushflow" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pypushflow-{{ version }}.tar.gz
-  sha256: bdde54639a999452bc5eaf45331155976b2bfd5a6adfabd39b2168a0cef0d72d
+  sha256: 775c6384e29989bfb00658f00c9970e43ed225148353ac8e27b0ada4240e8138
 
 build:
   noarch: python
