@@ -17,6 +17,8 @@ build:
 requirements:
   host:
     - python >=3.6
+    - setuptools >=46.4
+    - wheel
     - pip
   run:
     - python >=3.6
@@ -40,10 +42,12 @@ outputs:
     requirements:
       host:
         - python >=3.6
+        - setuptools >=46.4
+        - wheel
         - pip
       run:
         - python >=3.6
-        - {{ pin_subpackage('pypushflow', exact=True) }}
+        - "{{ pin_subpackage('pypushflow', exact=True) }}"
         - pymongo >=3
     test:
       imports:
