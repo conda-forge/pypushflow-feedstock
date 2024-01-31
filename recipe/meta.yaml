@@ -1,5 +1,5 @@
 {% set name = "pypushflow" %}
-{% set version = "0.6.1" %}
+{% set version = "0.6.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,21 +7,21 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pypushflow-{{ version }}.tar.gz
-  sha256: e961a097dcbb69925de76885f9242a3724c73661d1d345d8ad6d003dbb761428
+  sha256: 15c30271d28f8462c8571fd10e3d5995ba68989f47273a422770e036162eb56f
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.7
     - setuptools >=46.4
     - wheel
     - pip
   run:
-    - python >=3.6
+    - python >=3.7
 
 test:
   imports:
@@ -35,18 +35,20 @@ test:
     - pytest-subtests >=0.4
     - psutil >=5.8
     - mongita >=1
+    - mongomock
+    - numpy
 
 outputs:
   - name: pypushflow
   - name: pypushflow-mx
     requirements:
       host:
-        - python >=3.6
+        - python >=3.7
         - setuptools >=46.4
         - wheel
         - pip
       run:
-        - python >=3.6
+        - python >=3.7
         - "{{ pin_subpackage('pypushflow', exact=True) }}"
         - pymongo >=3
     test:
@@ -61,6 +63,8 @@ outputs:
         - pytest-subtests >=0.4
         - psutil >=5.8
         - mongita >=1
+        - mongomock
+        - numpy
     build:
       noarch: python
 
