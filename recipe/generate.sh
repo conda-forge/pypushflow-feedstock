@@ -5,5 +5,5 @@ grayskull pypi pypushflow --extras-require-all \
     --extras-require-test test \
     --extras-require-exclude dev doc\
     --strict-conda-forge
-mv pypushflow/meta.yaml .
+mv pypushflow/meta.yaml ./recipe
 rm -rf pypushflow
