@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pypushflow-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pypushflow-{{ version }}.tar.gz
   sha256: 8bbc45bcf3380ef60a9ae320a287d4828ded0d9f6fad6f66e7166f5393b97f69
 
 build:
