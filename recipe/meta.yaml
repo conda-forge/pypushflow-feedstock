@@ -1,5 +1,5 @@
 {% set name = "pypushflow" %}
-{% set version = "0.7.0" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pypushflow-{{ version }}.tar.gz
-  sha256: 8bbc45bcf3380ef60a9ae320a287d4828ded0d9f6fad6f66e7166f5393b97f69
+  sha256: f833565292dac5e4f34e7a0ce6768c784ce4cc6ef403680b95984ebfad23a394
 
 build:
   noarch: python
@@ -49,7 +49,7 @@ outputs:
         - pip
       run:
         - python >=3.7
-        - "{{ pin_subpackage('pypushflow', exact=True) }}"
+        - {{ pin_subpackage('pypushflow', exact=True) }}
         - pymongo >=3
     test:
       imports:
