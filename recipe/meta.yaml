@@ -49,7 +49,7 @@ outputs:
         - pip
       run:
         - python >=3.7
-        - {{ pin_subpackage('pypushflow', exact=True) }}
+        - "{{ pin_subpackage('pypushflow', exact=True) }}"
         - pymongo >=3
     test:
       imports:
