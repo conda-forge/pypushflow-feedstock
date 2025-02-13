@@ -35,7 +35,6 @@ test:
     - psutil >=5.8
     - mongita >=1
     - mongomock
-    - mongomock <4.2.0;python_version,<"3.8"
     - numpy
     - python {{ python_min }}
 
@@ -64,7 +63,6 @@ outputs:
         - psutil >=5.8
         - mongita >=1
         - mongomock
-        - mongomock <4.2.0;python_version,<"3.8"
         - numpy
         - python {{ python_min }}
     build:
