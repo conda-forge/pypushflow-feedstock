@@ -1,5 +1,5 @@
 {% set name = "pypushflow" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pypushflow-{{ version }}.tar.gz
-  sha256: f833565292dac5e4f34e7a0ce6768c784ce4cc6ef403680b95984ebfad23a394
+  sha256: 1a7326d39bb76a419f841f3700f2f40249330f486a683ba673cd4acd9e4045e3
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -50,7 +50,7 @@ outputs:
         - pip
       run:
         - python >={{ python_min }}
-        - "{{ pin_subpackage('pypushflow', exact=True) }}"
+        - {{ pin_subpackage('pypushflow', exact=True) }}
         - pymongo >=3
     test:
       imports:
